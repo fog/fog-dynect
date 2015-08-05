@@ -1,5 +1,3 @@
-require 'fog/dynect/core'
-
 module Fog
   module DNS
     class Dynect < Fog::Service

@@ -1,4 +1,3 @@
-require 'fog/core/collection'
 require 'fog/dynect/models/dns/zone'
 
 module Fog

@@ -1,4 +1,3 @@
-require 'fog/core/model'
 require 'fog/dynect/models/dns/records'
 
 module Fog
