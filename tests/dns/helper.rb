@@ -1,43 +1,10 @@
 def dns_providers
   {
-    :aws          => {
-      :mocked => false
-    },
-    :bluebox      => {
-      :mocked => false,
-      :zone_attributes => {
-        :ttl => 60
-      }
-    },
-    :dnsimple     => {
-      :mocked => false
-    },
-    :dnsmadeeasy  => {
-      :mocked => false
-    },
     :dynect       => {
       :mocked => false,
       :zone_attributes => {
         :email => 'fog@example.com'
       }
-    },
-    :linode       => {
-      :mocked => false,
-      :zone_attributes => {
-        :email => 'fog@example.com'
-      }
-    },
-    :zerigo       => {
-      :mocked => false
-    },
-    :rackspace    => {
-      :mocked => false,
-      :zone_attributes => {
-        :email => 'fog@example.com'
-      }
-    },
-    :rage4 => {
-      :mocked => false
     }
   }
 end

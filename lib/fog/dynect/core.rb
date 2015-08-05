@@ -1,6 +1,7 @@
 require 'nokogiri'
 
 require 'fog/core'
+require 'fog/json'
 require 'fog/xml'
 
 module Fog
