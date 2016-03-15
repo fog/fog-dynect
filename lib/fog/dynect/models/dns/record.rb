@@ -25,7 +25,9 @@ module Fog
           }
           options.delete_if {|key, value| value.nil?}
 
-          if replace
+          refresh_id if replace && identity.nil?
+          if replace && !identity.nil?
+            options['record_id'] = identity
             data = service.put_record(type, zone.identity, name, rdata, options).body['data']
           else
             data = service.post_record(type, zone.identity, name, rdata, options).body['data']
@@ -35,17 +37,7 @@ module Fog
           merge_attributes(data)
 
           zone.publish
-          records = service.get_record(type, zone.identity, name).body['data']
-          # data in format ['/REST/xRecord/domain/fqdn/identity]
-          records.map! do |record|
-            tokens = record.split('/')
-            {
-              :identity => tokens.last,
-              :type     => tokens[2][0...-6] # everything before 'Record'
-            }
-          end
-          record = records.find {|record| record[:type] == type}
-          merge_attributes(record)
+          refresh_id
 
           true
         end
@@ -59,6 +51,25 @@ module Fog
         def zone=(new_zone)
           @zone = new_zone
         end
+
+        def refresh_id
+          begin 
+            records = service.get_record(type, zone.identity, name).body['data']
+          rescue
+            return
+          end
+          # data in format ['/REST/xRecord/domain/fqdn/identity]
+          records.map! do |record|
+            tokens = record.split('/')
+            {
+              :identity => tokens.last,
+              :type     => tokens[2][0...-6] # everything before 'Record'
+            }
+          end
+          record = records.find() {|record| record[:type] == type}
+          merge_attributes(record)
+        end
+          
       end
     end
   end
