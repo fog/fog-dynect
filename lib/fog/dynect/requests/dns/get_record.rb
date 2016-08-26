@@ -5,7 +5,7 @@ module Fog
         # List records of a given type
         #
         # ==== Parameters
-        # * type<~String> - type of record in ['AAAA', 'ANY', 'A', 'CNAME', 'DHCID', 'DNAME', 'DNSKEY', 'DS', 'KEY', 'LOC', 'MX', 'NSA', 'NS', 'PTR', 'PX', 'RP', 'SOA', 'SPF', 'SRV', 'SSHFP', 'TXT']
+        # * type<~String> - type of record in ['AAAA', 'ALIAS', 'ANY', 'A', 'CNAME', 'DHCID', 'DNAME', 'DNSKEY', 'DS', 'KEY', 'LOC', 'MX', 'NSA', 'NS', 'PTR', 'PX', 'RP', 'SOA', 'SPF', 'SRV', 'SSHFP', 'TXT']
         # * zone<~String> - name of zone to lookup
         # * fqdn<~String> - name of fqdn to lookup
         # * options<~Hash>:
@@ -24,10 +24,10 @@ module Fog
       class Mock
         def get_record(type, zone, fqdn, options = {})
           raise ArgumentError unless [
-            'AAAA', 'ANY', 'A', 'CNAME',
-            'DHCID', 'DNAME', 'DNSKEY',
-            'DS', 'KEY', 'LOC', 'MX',
-            'NSA', 'NS', 'PTR', 'PX',
+            'AAAA', 'ALIAS' ,'ANY', 'A',
+            'CNAME', 'DHCID', 'DNAME',
+            'DNSKEY', 'DS', 'KEY', 'LOC',
+            'MX', 'NSA', 'NS', 'PTR', 'PX',
             'RP', 'SOA', 'SPF', 'SRV',
             'SSHFP', 'TXT'
           ].include? type
