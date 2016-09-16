@@ -68,7 +68,7 @@ module Fog
           @path               = options[:path]             || '/REST'
           @persistent         = options[:persistent]       || false
           @scheme             = options[:scheme]           || 'https'
-          @version            = options[:version]          || '3.5.2'
+          @version            = options[:version]          || '3.7.0'
           @job_poll_timeout   = options[:job_poll_timeout] || 10
           @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options)
         end
