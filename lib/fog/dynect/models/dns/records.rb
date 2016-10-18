@@ -18,7 +18,8 @@ module Fog
                 :identity => record['record_id'],
                 :fqdn => record['fqdn'],
                 :type => record['record_type'],
-                :rdata => record['rdata']
+                :rdata => record['rdata'],
+                :ttl => record['ttl']
               }
             end
           end
