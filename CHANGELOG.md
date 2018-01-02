@@ -1,3 +1,8 @@
+v0.3.0
+
+-   Change API endpoint to 'api.dynect.net' as Dyn will decommision
+'api-v4.dynect.net'
+
 v0.2.0
 
 populate 'ttl' property of 'record' model
