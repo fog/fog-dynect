@@ -1,5 +1,8 @@
 language: ruby
 
+sudo: false
+dist: trusty
+
 rvm:
   - 2.5
   - 2.4
