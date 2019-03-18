@@ -1,3 +1,9 @@
+v0.4.0
+
+allow specifying api version
+bump API version used to 3.7.13
+fix travis tests
+
 v0.3.0
 
 -   Change API endpoint to 'api.dynect.net' as Dyn will decommision
