@@ -1,6 +1,6 @@
 module Fog
-  module DNS
-    class Dynect < Fog::Service
+  module Dynect
+    class DNS < Fog::Service
       requires :dynect_customer, :dynect_username, :dynect_password
       recognizes :timeout, :persistent, :job_poll_timeout, :version
       recognizes :provider # remove post deprecation
@@ -149,6 +149,19 @@ module Fog
 
           response
         end
+      end
+    end
+  end
+
+  # @deprecated
+  module DNS
+    # @deprecated
+    class Dynect < Fog::Dynect::DNS
+      # @deprecated
+      # @overrides Fog::Service.new (from the fog-core gem)
+      def self.new(*)
+        Fog::Logger.deprecation 'Fog::DNS::Dynect is deprecated, please use Fog::Dynect::DNS.'
+        super
       end
     end
   end

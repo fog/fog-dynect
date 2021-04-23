@@ -1,8 +1,8 @@
 require 'fog/dynect/models/dns/records'
 
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Zone < Fog::Model
         identity  :domain
 
@@ -35,7 +35,7 @@ module Fog
         end
 
         def records
-          @records ||= Fog::DNS::Dynect::Records.new(:zone => self, :service => service)
+          @records ||= Fog::Dynect::DNS::Records.new(:zone => self, :service => service)
         end
 
         def nameservers

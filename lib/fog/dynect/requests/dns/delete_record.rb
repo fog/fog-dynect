@@ -1,6 +1,6 @@
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Real
         # Delete a record
         #
@@ -22,9 +22,9 @@ module Fog
 
       class Mock
         def delete_record(type, zone, fqdn, record_id)
-          raise Fog::DNS::Dynect::NotFound unless zone = self.data[:zones][zone]
+          raise Fog::Dynect::DNS::NotFound unless zone = self.data[:zones][zone]
 
-          raise Fog::DNS::Dynect::NotFound unless zone[:records][type].find { |record| record[:fqdn] == fqdn && record[:record_id] == record_id.to_i }
+          raise Fog::Dynect::DNS::NotFound unless zone[:records][type].find { |record| record[:fqdn] == fqdn && record[:record_id] == record_id.to_i }
 
           zone[:records_to_delete] << {
             :type => type,
