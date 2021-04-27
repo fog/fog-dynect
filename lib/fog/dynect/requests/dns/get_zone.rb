@@ -1,6 +1,6 @@
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Real
         # Get one or more zones
         #

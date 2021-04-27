@@ -1,12 +1,12 @@
 require 'fog/dynect/models/dns/record'
 
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Records < Fog::Collection
         attribute :zone
 
-        model Fog::DNS::Dynect::Record
+        model Fog::Dynect::DNS::Record
 
         def all(options = {})
           requires :zone

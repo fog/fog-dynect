@@ -1,6 +1,6 @@
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Real
         def post_session
           request(

@@ -1,10 +1,10 @@
 require 'fog/dynect/models/dns/zone'
 
 module Fog
-  module DNS
-    class Dynect
+  module Dynect
+    class DNS
       class Zones < Fog::Collection
-        model Fog::DNS::Dynect::Zone
+        model Fog::Dynect::DNS::Zone
 
         def all
           data = service.get_zone.body['data'].map do |zone|
