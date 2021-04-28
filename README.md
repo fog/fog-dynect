@@ -1,6 +1,6 @@
 # Fog::Dynect
 
-[![Build Status](https://travis-ci.org/fog/fog-dynect.svg?branch=master)](https://travis-ci.org/fog/fog-dynect)
+[![Build Status](https://github.com/fog/fog-dynect/actions/workflows/ruby.yml/badge.svg)](https://github.com/fog/fog-dynect/actions/workflows/ruby.yml)
 
 ## Installation
 
