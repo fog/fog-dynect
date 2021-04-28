@@ -1,3 +1,10 @@
+v0.5.0 2021-04-28
+=================
+
+replace deprecated Fog::DNS:Dynect usage with Fog::Dynect::DNS
+add github actions and config
+drop travis usage
+
 v0.4.0
 
 allow specifying api version
